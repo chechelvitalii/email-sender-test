@@ -1,0 +1,10 @@
+com\chechel\pojo\STATE.class
+com\chechel\service\impl\EmailSendService.class
+com\chechel\facade\UserNotificatorFacade.class
+com\chechel\pojo\User.class
+com\chechel\repository\UserRepository.class
+com\chechel\repository\impl\FileUserRepository.class
+com\chechel\service\SendService.class
+com\chechel\facade\impl\UserNotificatorFecade.class
+com\chechel\ClientRunner.class
+com\chechel\service\impl\EmailSendService$1.class

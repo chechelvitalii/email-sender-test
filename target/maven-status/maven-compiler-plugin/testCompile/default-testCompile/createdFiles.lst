@@ -1,0 +1,3 @@
+com\chechel\facade\impl\UserNotificatorFecadeTest.class
+com\chechel\service\impl\EmailSendServiceTest.class
+com\chechel\repository\impl\FileUserRepositoryTest.class
