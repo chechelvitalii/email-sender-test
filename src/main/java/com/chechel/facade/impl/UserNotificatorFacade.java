@@ -1,6 +1,6 @@
 package com.chechel.facade.impl;
 
-import com.chechel.facade.UserNotificatorFacade;
+import com.chechel.facade.NotificatorFacade;
 import com.chechel.pojo.User;
 import com.chechel.repository.UserRepository;
 import com.chechel.service.SendService;
@@ -10,11 +10,11 @@ import java.util.List;
 /**
  * Created by vitaliy on 01.11.16.
  */
-public class UserNotificatorFecade implements UserNotificatorFacade {
+public class UserNotificatorFacade implements NotificatorFacade {
     private final SendService sendService;
     private final UserRepository userRepository;
 
-    public UserNotificatorFecade(SendService sendService, UserRepository userRepository) {
+    public UserNotificatorFacade(SendService sendService, UserRepository userRepository) {
         this.sendService = sendService;
         this.userRepository = userRepository;
     }

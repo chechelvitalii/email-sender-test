@@ -1,13 +1,16 @@
 package com.chechel.repository.impl;
 
 import com.chechel.exception.RepositoryNotFound;
+import com.chechel.pojo.STATE;
 import com.chechel.pojo.User;
 import com.chechel.repository.UserRepository;
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
@@ -38,7 +41,23 @@ public class FileUserRepositoryTest {
     @Test
     public void shouldFineAllActive() throws Exception {
         List<User> users = userRepository.fineAllActive();
+        assertThat(users, onlyActive());
         assertThat(users, Matchers.hasSize(6));
     }
 
+    private Matcher<List<User>> onlyActive() {
+        return new BaseMatcher<List<User>>() {
+            @Override
+            public boolean matches(Object item) {
+                List<User> users = (List<User>) item;
+                return users.stream()
+                        .allMatch(user -> STATE.ACTIVE == user.getState());
+            }
+
+            @Override
+            public void describeTo(Description description) {
+
+            }
+        };
+    }
 }
